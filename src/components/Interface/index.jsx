@@ -3,7 +3,6 @@ import {
   Container,
   LogoWrap,
   OutLogo,
-  SetSpeedometer
 } from "./elements";
 import Navbar from "./Navbar";
 

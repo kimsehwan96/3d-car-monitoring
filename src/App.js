@@ -20,7 +20,6 @@ function App() {
             <Interface />
           </Html>
           <Camera />
-          {/*<OrbitControls />*/}
           <Light position={[1.05, 1.86, 4.07]} />
           <Light position={[-1.25, 1.86, 4.07]} />
           <Light position={[1.33, 1.92, 3.8]} />
