@@ -1,25 +1,29 @@
-import { Suspense } from "react"
+import {Suspense, useState} from "react"
 import { Canvas } from "@react-three/fiber"
-import { Html } from "@react-three/drei"
+import {Html, OrbitControls} from "@react-three/drei"
 import Model from "./components/Model"
 import Ground from "./components/Ground";
 import Light from "./components/Light";
 import Interface from "./components/Interface";
-
 import Camera from "./components/Camera";
+import HardCoding from "./components/HardCoding";
 
 function App() {
+  const [position, setPosition] = useState([0, 12, 12])
+
   return (
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div style={{ height: '100vh', width: '100vw' }}>
         <Canvas
             colorManagement
             style={{ background: '#191212' }}
             shadows
         >
-          <Html style={{ height: '100vh', position: 'absolute', top: 0 }}>
-            <Interface />
+          <OrbitControls />
+          <Html>
+            <Interface setPosition={setPosition} />
+            <HardCoding />
           </Html>
-          <Camera />
+          <Camera position={position} />
           <Light position={[1.05, 1.86, 4.07]} />
           <Light position={[-1.25, 1.86, 4.07]} />
           <Light position={[1.33, 1.92, 3.8]} />
@@ -30,7 +34,6 @@ function App() {
               <Ground />
             </Suspense>
           </group>
-          {/*<LightEffects />*/}
           <Suspense fallback={null}>
             <Model
                 path='/3d/KiaOptima3DModel.fbx'

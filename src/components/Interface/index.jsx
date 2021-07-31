@@ -6,7 +6,7 @@ import {
 } from "./elements";
 import Navbar from "./Navbar";
 
-const Interface = () => {
+const Interface = ({ setPosition }) => {
   return (
       <Container>
         <LogoWrap>
@@ -14,7 +14,7 @@ const Interface = () => {
             <img src='/darkLogo.png' alt='logo' style={{ width: '5em', height: '5em' }} />
           </OutLogo>
         </LogoWrap>
-        <Navbar />
+        <Navbar setPosition={setPosition} />
       </Container>
   )
 }

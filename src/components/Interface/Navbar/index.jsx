@@ -5,11 +5,10 @@ import {
 import Items from "./Items";
 
 
-const Navbar = () => {
+const Navbar = ({ setPosition }) => {
   return (
     <Container>
-      <Items />
-
+      <Items setPosition={setPosition} />
     </Container>
   )
 }
