@@ -1,6 +1,27 @@
 import React from "react"
+import {randInt} from "three/src/math/MathUtils";
+
+let speed = 0;
+let rpm = 0;
+let tripDistance = 0;
+let oil = 0;
+
+// const updateValues = () => {
+//     setInterval(() => {
+//         speed = Math.floor(Math.random() * 120);
+//         rpm = Math.floor(Math.random() * 7000);
+//         tripDistance = tripDistance += 1
+//         oil = 40
+//     }, 1000)
+// }
 
 const HardCoding = () => {
+    setInterval(() => {
+        speed = Math.floor(Math.random() * 120);
+        rpm = Math.floor(Math.random() * 7000);
+        tripDistance = tripDistance += 1
+        oil = 40
+    }, 1000);
   return (
     <>
       <div
@@ -20,14 +41,15 @@ const HardCoding = () => {
             textAlign: "center",
             borderBottom: '1px solid #fff',
           }}
-        >Wheel1</div>
+        >rpm</div>
         <div
           style={{
             color: 'whitesmoke',
             textAlign: 'center'
           }}
         >
-          89%
+            {rpm} rpm
+            {/*TODO: attach mqtt data with this area*/}
         </div>
       </div>
       <div
@@ -47,14 +69,14 @@ const HardCoding = () => {
             textAlign: "center",
             borderBottom: '1px solid #fff',
           }}
-        >Wheel2</div>
+        >Speed</div>
         <div
           style={{
             color: 'whitesmoke',
             textAlign: 'center'
           }}
         >
-          89%
+            {speed} Km/h
         </div>
       </div>
       <div
@@ -75,14 +97,14 @@ const HardCoding = () => {
             textAlign: "center",
             borderBottom: '1px solid #fff',
           }}
-        >Wheel3</div>
+        >Oil Level</div>
         <div
           style={{
             color: 'whitesmoke',
             textAlign: 'center'
           }}
         >
-          89%
+            {oil}%
         </div>
       </div>
       <div
@@ -103,14 +125,14 @@ const HardCoding = () => {
             textAlign: "center",
             borderBottom: '1px solid #fff',
           }}
-        >Wheel4</div>
+        >Trip distance</div>
         <div
           style={{
             color: 'whitesmoke',
             textAlign: 'center'
           }}
         >
-          89%
+            {tripDistance} km
         </div>
       </div>
     </>
